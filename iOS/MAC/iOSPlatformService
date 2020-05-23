@@ -1,0 +1,125 @@
+using AuthenticationServices;
+using CCKVPN.iOS.VPNServices;
+using CoreEngine.Engines.Core;
+using CoreEngine.Model.Core;
+using CoreEngine.Model.DBModel;
+using CoreEngine.Model.VPNModels;
+using CoreEngine.Worker;
+using Foundation;
+using NetworkExtension;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
+using UIController.Services;
+
+namespace CCKVPN.iOS.Services
+{
+    public class IOSPlatformService : IPlatformService
+    {
+        private readonly List<IStateReceiver> _stateReceivers;
+        private readonly VPNConnectionService _connectionService;
+        private NETunnelProviderManager manager;
+
+        public IOSPlatformService()
+        {
+
+        }
+
+        public async Task<bool> StartVPN(string profile)
+        {
+            try
+            {
+                var counter = 3;
+                var finalState = false;
+                while (counter > 0)
+                {
+                    finalState = await Init(profile);
+                    if (finalState)
+                    {
+                        _settings.VPNState(true);
+                        _connectionService.Start();
+                        break;
+                    }
+                    else
+                    {
+                        await Task.Delay(1000);
+                    }
+                    counter--;
+                }
+                return finalState;
+            }
+            catch (Exception ex)
+            {
+                LogEngine.Error(ex);
+                return false;
+            }
+        }
+
+        private async Task<bool> Init(VpnProfile currentProfile)
+        {
+            await CreateManager();
+            var tunProto = new NETunnelProviderProtocol
+            {
+                ServerAddress = string.Empty,
+                ProviderBundleIdentifier = "com.{comanyName}.{appname}.{extension}"
+            };
+            var keys = new NSString[] {
+                    new NSString("Profile"),
+                    new NSString("Username"),
+                    new NSString("Password")
+                };
+            var datas = new NSObject[]
+            {
+                    new NSString(currentProfile.Config),
+                    new NSString(currentProfile.Username),
+                    new NSString(currentProfile.Password)
+            };
+            var config = new NSDictionary<NSString, NSObject>(keys, datas);
+            tunProto.ProviderConfiguration = config;
+
+            manager.ProtocolConfiguration = tunProto;
+
+            await manager.SaveToPreferencesAsync();
+            var options = new NEVpnConnectionStartOptions(config);
+            var res = manager.Connection.StartVpnTunnel(options, out NSError nSError);
+            if (nSError != null)
+            {
+                LogEngine.Info(nSError.Description);
+            }
+            return res;
+        }
+
+        private async Task CreateManager()
+        {
+            var res = await NETunnelProviderManager.LoadAllFromPreferencesAsync();
+            for (var counter = 0; counter < (int)res.Count; counter++)
+            {
+                var tempMan = res.GetItem<NETunnelProviderManager>((nuint)counter);
+                if (tempMan.LocalizedDescription == "CCKVPN")
+                {
+                    manager = tempMan;
+                    break;
+                }
+            }
+
+            if (manager == null)
+            {
+                manager = new NETunnelProviderManager
+                {
+                    LocalizedDescription = "CCKVPN",
+                    Enabled = true
+                };
+            }
+        }
+
+        public async void StopVPN()
+        {
+            if (manager == null) await CreateManager();
+            manager?.Connection.StopVpnTunnel();
+        }
+    }
+}

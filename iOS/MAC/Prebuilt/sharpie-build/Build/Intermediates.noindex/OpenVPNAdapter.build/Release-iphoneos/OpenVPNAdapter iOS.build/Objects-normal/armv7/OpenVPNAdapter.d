@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNAdapter.mm \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNAdapter.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNClient.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/Libraries/Vendors/openvpn/client/ovpncli.hpp \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/Libraries/Vendors/openvpn/openvpn/tun/builder/base.hpp \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/Libraries/Vendors/openvpn/openvpn/tun/extern/fw.hpp \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/Libraries/Vendors/openvpn/openvpn/pki/epkibase.hpp \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/Libraries/Vendors/openvpn/openvpn/transport/client/extern/fw.hpp \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNError.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNAdapterEvent.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNPacketFlowBridge.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNNetworkSettingsBuilder.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNAdapterPacketFlow.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNCredentials+Internal.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNCredentials.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNConfiguration+Internal.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNConfiguration.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNConnectionInfo+Internal.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNConnectionInfo.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNInterfaceStats+Internal.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNInterfaceStats.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNProperties+Internal.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNProperties.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNSessionToken+Internal.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNSessionToken.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNTransportStats+Internal.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/OpenVPNTransportStats.h \
+  /Users/sakib51/Desktop/VPN/VpnAdapter/OpenVPNAdapter/Sources/OpenVPNAdapter/NSError+OpenVPNError.h
