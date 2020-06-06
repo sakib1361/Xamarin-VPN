@@ -7,7 +7,7 @@ This project aims to provide a demonstration about how to import openvpn library
 Before starting, I would like to thank those where credit is due. Without them, it would not be possible to even think of this. 
 
 OpenVPN Library https://github.com/OpenVPN/openvpn3  
-schwabe OpenVPN Pot for android https://github.com/schwabe/ics-openvpn  
+schwabe OpenVPN Port for android https://github.com/schwabe/ics-openvpn  
 ss-abramchuk OpenVPN Port for iOS https://github.com/ss-abramchuk/OpenVPNAdapter  
 
 Dedicated platform specific code and scripting is required. Its possible to create a nuget package out of this project. Unfortunately I am not experienced enough to do this. Thats why, any contributions would be highly appreciated.  
